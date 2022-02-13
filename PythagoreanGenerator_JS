@@ -1,0 +1,23 @@
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); 
+  }
+var answer = 0;
+var score = 0;
+var correct = 0;
+var incorrect = 0;
+while (answer != "end"){
+  var a = getRandomInt(2,40);
+  var b = getRandomInt(2,40);
+  var answer = window.prompt("A = "+a+", B = "+b+". Find C using Pythagorean Theorem (Round your answer down)...Type 'end' to leave");
+  if (answer == Math.floor(Math.sqrt((a**2)+(b**2)))){
+  	var correct= correct+1;
+    alert("Correct! Press 'Ok' to continue.");
+  } else {
+  	var incorrect= incorrect+1;
+    alert("Incorrect... Correct answer was "+Math.floor(Math.sqrt((a**2)+(b**2)))+" Press 'Ok' to continue.");
+  }
+  var score = correct/(correct+incorrect);
+	}
+alert(score*100+"%");
